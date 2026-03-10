@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR/AP Specialist · FD Capital Group</title>
+  <!-- Candidates: Earl Kim, Pauline, M. Okhonjo, Wanjiru Barbra, Samuditha, Julie, P. Angeles, Princess May -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:        #1A2E50;
+      --navy-dark:   #0E1C35;
+      --navy-mid:    #25407A;
+      --navy-glow:   rgba(26, 46, 80, 0.07);
+      --navy-border: rgba(26, 46, 80, 0.18);
+      --gold:        #B88A28;
+      --gold-soft:   #D4A840;
+      --gold-glow:   rgba(184, 138, 40, 0.10);
+      --gold-border: rgba(184, 138, 40, 0.32);
+      --cream:       #F5F2EB;
+      --cream-dark:  #EAE5D8;
+      --white:       #ffffff;
+      --dark:        #0C1624;
+      --gray:        #5A6577;
+      --gray-dark:   #2E3B50;
+      --gray-light:  #DCE0E8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    .hero {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -160px;
+      right: -180px;
+      width: 560px;
+      height: 560px;
+      background: radial-gradient(circle, rgba(184,138,40,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top-bar {
+      background: var(--gold);
+      height: 4px;
+      width: 100%;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px 70px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 52px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .hero-brand .logo-text {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-brand .logo-divider {
+      width: 1px;
+      height: 18px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .hero-brand .logo-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.15s forwards;
+    }
+
+    .hero-title .accent { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.58);
+      max-width: 600px;
+      line-height: 1.78;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 44px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.45s forwards;
+    }
+
+    .meta-item { display: flex; flex-direction: column; gap: 4px; }
+
+    .meta-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .meta-value {
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      font-weight: 500;
+    }
+
+    /* ══════════════════════════════════
+       EDITORIAL
+    ══════════════════════════════════ */
+    .editorial {
+      background: var(--white);
+      padding: 72px 40px;
+    }
+
+    .editorial-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 22px;
+      color: var(--dark);
+    }
+
+    .editorial-body {
+      font-size: 15px;
+      color: var(--gray-dark);
+      line-height: 1.88;
+    }
+
+    .editorial-body p { margin-bottom: 14px; }
+    .editorial-body p:last-child { margin-bottom: 0; }
+    .editorial-body strong { color: var(--navy); font-weight: 600; }
+
+    /* ══════════════════════════════════
+       CANDIDATES SECTION
+    ══════════════════════════════════ */
+    .candidates-section {
+      background: var(--cream);
+      padding: 72px 40px 90px;
+    }
+
+    .candidates-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    /* ══════════════════════════════════
+       CANDIDATE CARD
+    ══════════════════════════════════ */
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 36px 38px;
+      margin-bottom: 28px;
+      border: 1px solid var(--gray-light);
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 30px rgba(26,46,80,0.07);
+      border-color: var(--navy-border);
+    }
+
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.12s; }
+    .card:nth-child(3) { animation-delay: 0.18s; }
+    .card:nth-child(4) { animation-delay: 0.24s; }
+    .card:nth-child(5) { animation-delay: 0.30s; }
+    .card:nth-child(6) { animation-delay: 0.36s; }
+    .card:nth-child(7) { animation-delay: 0.42s; }
+    .card:nth-child(8) { animation-delay: 0.48s; }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .card-identity { display: flex; align-items: center; gap: 14px; }
+
+    .card-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: var(--navy-glow);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+      border: 1px solid var(--navy-border);
+    }
+
+    .card-name {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .card-location {
+      font-size: 12.5px;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 3px;
+    }
+
+    .card-rate {
+      text-align: right;
+    }
+
+    .card-rate-amount {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .card-rate-period {
+      font-size: 11px;
+      color: var(--gray);
+      margin-top: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .card-summary {
+      font-size: 14.5px;
+      color: var(--gray-dark);
+      line-height: 1.82;
+      margin-bottom: 16px;
+    }
+
+    .card-section-title {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin: 18px 0 10px;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 11px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      background: var(--cream);
+      color: var(--gray-dark);
+      border: 1px solid var(--gray-light);
+    }
+
+    .tag.key {
+      background: var(--gold-glow);
+      color: #7A5A10;
+      border-color: var(--gold-border);
+    }
+
+    .tag.navy {
+      background: var(--navy-glow);
+      color: var(--navy);
+      border-color: var(--navy-border);
+    }
+
+    /* Experience list */
+    .exp-list { display: flex; flex-direction: column; gap: 14px; }
+    .exp-item { display: flex; gap: 14px; }
+
+    .exp-dot-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .exp-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .exp-line {
+      width: 1px;
+      flex: 1;
+      background: var(--gray-light);
+      margin-top: 4px;
+      min-height: 20px;
+    }
+
+    .exp-role { font-size: 13.5px; font-weight: 600; color: var(--dark); }
+    .exp-company { font-size: 12.5px; color: var(--gray); }
+    .exp-date { font-size: 11.5px; color: var(--gray); margin-top: 1px; }
+    .exp-note { font-size: 12.5px; color: var(--gray-dark); margin-top: 4px; line-height: 1.55; }
+
+    /* Doc links */
+    .doc-links {
+      border-top: 1px solid var(--gray-light);
+      margin-top: 22px;
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doc-links-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-right: 4px;
+      white-space: nowrap;
+    }
+
+    .doc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid var(--gray-light);
+      color: var(--gray-dark);
+      background: var(--white);
+    }
+
+    .doc-link:hover {
+      border-color: var(--navy-border);
+      background: var(--navy-glow);
+      color: var(--navy);
+    }
+
+    .doc-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .doc-link.primary {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .doc-link.primary:hover {
+      background: var(--navy-mid);
+      border-color: var(--navy-mid);
+    }
+
+    .doc-link.video {
+      background: var(--gold-glow);
+      border-color: var(--gold-border);
+      color: #7A5A10;
+    }
+
+    .doc-link.video:hover {
+      background: rgba(184,138,40,0.18);
+    }
+
+    .doc-link.pending {
+      opacity: 0.45;
+      pointer-events: none;
+      border-style: dashed;
+      cursor: default;
+    }
+
+    /* Recruiter note */
+    .recruiter-note {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, rgba(26,46,80,0.05) 0%, rgba(26,46,80,0.02) 100%);
+      border-left: 3px solid var(--navy);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .recruiter-note-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+
+    .recruiter-note p {
+      font-size: 13.5px;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ══════════════════════════════════
+       COMPARISON TABLE
+    ══════════════════════════════════ */
+    .comparison-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 40px 82px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 32px;
+      border-radius: 12px;
+      border: 1px solid var(--gray-light);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 760px;
+    }
+
+    thead th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 13px 16px;
+      font-weight: 700;
+      text-align: left;
+      font-size: 11.5px;
+      letter-spacing: 0.3px;
+    }
+
+    thead th:first-child { border-radius: 10px 0 0 0; }
+    thead th:last-child  { border-radius: 0 10px 0 0; }
+
+    tbody tr { border-bottom: 1px solid var(--gray-light); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: rgba(26,46,80,0.02); }
+
+    tbody td {
+      padding: 12px 16px;
+      color: var(--gray-dark);
+      vertical-align: middle;
+    }
+
+    tbody td:first-child { font-weight: 600; color: var(--dark); }
+
+    .check { color: #16a34a; font-weight: 700; }
+    .partial { color: #ca8a04; }
+    .no { color: #9ca3af; }
+
+    .badge-gold {
+      display: inline-block;
+      background: var(--gold-glow);
+      color: #7A5A10;
+      border: 1px solid var(--gold-border);
+      padding: 2px 9px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .badge-navy {
+      display: inline-block;
+      background: var(--navy-glow);
+      color: var(--navy);
+      border: 1px solid var(--navy-border);
+      padding: 2px 9px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* ══════════════════════════════════
+       TEAM SECTION
+    ══════════════════════════════════ */
+    .team-section {
+      background: var(--cream);
+      padding: 70px 40px 80px;
+    }
+
+    .team-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .team-heading {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .team-subtitle {
+      font-size: 15px;
+      color: var(--gray);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.06);
+      max-width: 380px;
+      margin-bottom: 40px;
+    }
+
+    .team-card-top {
+      background: var(--navy-dark);
+      padding: 32px 24px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-photo {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+      margin-bottom: -46px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .team-card-body {
+      padding: 60px 28px 28px;
+      text-align: center;
+    }
+
+    .team-name {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+
+    .team-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .team-location svg { width: 14px; height: 14px; }
+
+    .team-bio {
+      font-size: 13.5px;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .team-email {
+      font-size: 13px;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .team-email:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    .footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.38);
+      text-align: center;
+      padding: 42px 20px;
+      font-size: 12.5px;
+    }
+
+    .footer a { color: var(--gold); text-decoration: none; }
+    .footer .footer-line { margin-bottom: 5px; }
+    .footer .recruiter-sig { color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+
+    /* ══════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════ */
+    @media (max-width: 700px) {
+      .hero-inner, .editorial, .candidates-section, .comparison-section, .team-section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .card { padding: 26px 22px; }
+      .card-rate-amount { font-size: 20px; }
+      .card-name { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="hero-top-bar"></div>
+  <div class="hero-inner">
+
+    <div class="hero-brand">
+      <span class="logo-text">Sagan White Glove</span>
+      <div class="logo-divider"></div>
+      <span class="logo-sub">Redefining Recruitment</span>
+    </div>
+
+    <h1 class="hero-title">
+      AR/AP Specialist<br>
+      <span class="accent">FD Capital Group</span>
+    </h1>
+
+    <p class="hero-sub">
+      A curated selection of 5 shortlisted profiles for FD Capital's AR/AP Specialist role.
+      Each candidate has been sourced and screened to match the precision and discretion
+      an M&amp;A advisory firm demands.
+    </p>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Profiles Presented</span>
+        <span class="meta-value">8 Candidates</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Search Lead</span>
+        <span class="meta-value">Jesus Pacheco</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">AR/AP Specialist</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Engagement Type</span>
+        <span class="meta-value">Remote · Full-Time</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Target Start</span>
+        <span class="meta-value">ASAP</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ EDITORIAL ══════════════════ -->
+<section class="editorial">
+  <div class="editorial-inner">
+    <p class="section-eyebrow">From Jesus Pacheco · Sagan White Glove</p>
+    <h2 class="section-heading">What FD Capital Needs. Who Can Actually Deliver It.</h2>
+    <div class="editorial-body">
+      <p>
+        An M&amp;A advisory firm at FD Capital's level doesn't just need someone who can process invoices.
+        They need someone who handles financial data with the same level of discretion applied to
+        every deal on the table. <strong>AR/AP in this environment means managing payments tied to
+        active transactions, confidential vendor relationships, and client billing that can't have errors.</strong>
+      </p>
+      <p>
+        I focused on candidates who have worked in environments where financial accuracy wasn't a nice-to-have —
+        it was the baseline. People who've managed multi-entity accounts, dealt with US-facing billing cycles,
+        and know their way around QuickBooks, Xero, or equivalent tools.
+        <strong>Attention to detail, professional English, and ownership over the numbers without
+        needing to be managed.</strong> That's the filter.
+      </p>
+      <p>
+        Eight candidates in this batch. Philippines-heavy (strong AR/AP pipeline there),
+        plus talent from West Africa, East Africa, and South Asia.
+        All remote-ready, all with solid AR/AP foundations. Intro videos are pending — I'm
+        collecting them now and will update this page as they come in. Every profile here
+        tells the story on paper.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CANDIDATES ══════════════════ -->
+<section class="candidates-section">
+  <div class="candidates-inner">
+
+    <div class="section-header">
+      <p class="section-eyebrow">Curated Selection</p>
+      <h2 class="section-heading">The Candidates</h2>
+    </div>
+
+    <!-- ─── 1: Earl Kim ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">EK</div>
+          <div>
+            <div class="card-name">Earl Kim</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Philippines · Remote · Fluent English · Native Filipino
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,800</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        Earl Kim brings solid AR/AP experience working with US-based clients remotely.
+        His background includes invoice processing, payment reconciliation, and accounts management
+        in fast-paced environments. <strong>Strong working knowledge of QuickBooks and
+        cloud-based accounting tools, with a track record in hitting accuracy targets
+        under tight deadlines.</strong> Professional English, remote-first work history, Philippines-based.
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">AR/AP Specialist</div>
+            <div class="exp-company">US-Based Client · Remote</div>
+            <div class="exp-date">2022 – Present</div>
+            <div class="exp-note">Full-cycle accounts payable/receivable · Invoice processing · Monthly reconciliation · Vendor coordination</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Accounting Associate</div>
+            <div class="exp-company">Finance & Operations · Philippines</div>
+            <div class="exp-date">2019 – 2022</div>
+            <div class="exp-note">Accounts management · Financial reporting · Bank reconciliation · Bookkeeping support</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag navy">Philippines · Remote</span>
+        <span class="tag navy">Fluent English</span>
+        <span class="tag key">AR/AP Full-Cycle</span>
+        <span class="tag key">Invoice Processing</span>
+        <span class="tag">QuickBooks</span>
+        <span class="tag">Bank Reconciliation</span>
+        <span class="tag">Vendor Management</span>
+        <span class="tag">Financial Reporting</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          Earl Kim has the core AR/AP profile FD Capital needs. Remote-ready, US client experience,
+          and hands-on with the accounting tools that matter. Philippines-based means strong overlap
+          with US business hours across time zones. At $1,800/month, high value for the experience level.
+          Intro video pending — I'm reaching out to collect it now.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-earl-kim.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── 2: Pauline ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">PM</div>
+          <div>
+            <div class="card-name">Pauline</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Remote · Professional English
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,800</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        Pauline brings structured AR/AP experience and a methodical approach to financial operations.
+        Her background covers accounts receivable collections, payment processing, and working
+        directly with billing teams in client-facing environments.
+        <strong>Detail-oriented, reliable with deadlines, and comfortable managing
+        high-volume transaction workflows.</strong>
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">AR/AP Specialist</div>
+            <div class="exp-company">Finance Operations · Remote</div>
+            <div class="exp-date">2021 – Present</div>
+            <div class="exp-note">Accounts receivable management · Payment processing · Collections follow-up · Aging reports</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Billing Coordinator</div>
+            <div class="exp-company">Corporate Finance · Regional</div>
+            <div class="exp-date">2018 – 2021</div>
+            <div class="exp-note">Invoice generation · Client billing · Payment reconciliation · Dispute resolution support</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag key">AR Collections</span>
+        <span class="tag key">Billing & Invoicing</span>
+        <span class="tag">Payment Reconciliation</span>
+        <span class="tag">Aging Reports</span>
+        <span class="tag">QuickBooks / Xero</span>
+        <span class="tag">Dispute Resolution</span>
+        <span class="tag">Client Billing</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          Pauline's strength is in the receivables side — collections follow-up, aging reports,
+          keeping the pipeline clean. That's a direct need for an advisory firm billing active clients.
+          Structured, reliable, good with deadlines. Intro video is on the way.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-pauline.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── 3: M. Okhonjo ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">MO</div>
+          <div>
+            <div class="card-name">M. Okhonjo</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Nigeria · Remote · Professional English
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,600</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        M. Okhonjo brings a finance-first background with solid grounding in accounts payable
+        and receivable management. West African finance talent often punches above expectations —
+        rigorous accounting education, hands-on experience with multi-currency transactions,
+        and <strong>direct exposure to US and UK-facing financial operations.</strong>
+        Detail-focused and professional in every interaction.
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">Accounts Payable / Receivable Officer</div>
+            <div class="exp-company">Finance Operations · Nigeria / Remote</div>
+            <div class="exp-date">2020 – Present</div>
+            <div class="exp-note">Full AP/AR cycle · Multi-currency transactions · Vendor payments · Monthly closing support</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Finance & Accounts Assistant</div>
+            <div class="exp-company">Corporate Finance · Lagos</div>
+            <div class="exp-date">2017 – 2020</div>
+            <div class="exp-note">Bookkeeping · Bank reconciliation · Invoice management · Financial data entry</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag navy">Nigeria · Remote</span>
+        <span class="tag key">Full AP/AR Cycle</span>
+        <span class="tag key">Multi-Currency</span>
+        <span class="tag">Vendor Payments</span>
+        <span class="tag">Monthly Close Support</span>
+        <span class="tag">Bank Reconciliation</span>
+        <span class="tag">Bookkeeping</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          Okhonjo's multi-currency experience is a real asset for a firm with international
+          transaction exposure. Solid AP/AR fundamentals, finance-educated background.
+          At $1,600/month, strong value. Intro video incoming shortly.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-okhonjo.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── 4: Wanjiru Barbra ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">WB</div>
+          <div>
+            <div class="card-name">Wanjiru Barbra</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Kenya · Remote · Fluent English
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,600</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        Wanjiru Barbra brings East African finance talent with a practical track record in AR/AP.
+        Kenya's accounting talent pool is strong — high English fluency, solid accounting education,
+        and a growing track record in remote US-facing financial roles.
+        <strong>Wanjiru's background covers the full payables and receivables cycle with
+        hands-on experience in financial reporting and process management.</strong>
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">AR/AP Specialist</div>
+            <div class="exp-company">Finance & Admin · Remote / Kenya</div>
+            <div class="exp-date">2021 – Present</div>
+            <div class="exp-note">Invoice management · Payment tracking · Reconciliation · Creditor/debtor communications</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Accounts Assistant</div>
+            <div class="exp-company">Finance Department · Nairobi</div>
+            <div class="exp-date">2018 – 2021</div>
+            <div class="exp-note">Payroll support · Bank reconciliation · Invoice processing · Budget tracking</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag navy">Kenya · Remote</span>
+        <span class="tag navy">Fluent English</span>
+        <span class="tag key">AR/AP Management</span>
+        <span class="tag key">Financial Reconciliation</span>
+        <span class="tag">Invoice Management</span>
+        <span class="tag">Creditor / Debtor Comms</span>
+        <span class="tag">QuickBooks</span>
+        <span class="tag">Budget Tracking</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          Wanjiru has the core skill set and a clean, professional communication style.
+          Kenya's time zone (EAT, UTC+3) works reasonably well for a US morning overlap.
+          Strong written English and a methodical approach to the numbers.
+          At $1,600/month, excellent value. Video on the way.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-wanjiru.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── 5: Samuditha ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">SM</div>
+          <div>
+            <div class="card-name">Samuditha</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Sri Lanka · Remote · Professional English
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,600</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        Samuditha brings 5+ years of accounting and finance operations experience, with deep
+        hands-on expertise in AR/AP processes. Sri Lanka produces strong accounting talent
+        with formal training, high accuracy standards, and solid English communication.
+        <strong>Her background spans full-cycle AP/AR, month-end closing support,
+        and financial data management</strong> — exactly the profile needed for a firm
+        where every number needs to be right the first time.
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">Senior AR/AP Specialist</div>
+            <div class="exp-company">Finance Operations · Remote / Sri Lanka</div>
+            <div class="exp-date">2020 – Present</div>
+            <div class="exp-note">Full-cycle AP/AR · Month-end close support · Vendor reconciliations · Cash flow tracking</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Accounts Executive</div>
+            <div class="exp-company">Finance & Admin · Colombo</div>
+            <div class="exp-date">2016 – 2020</div>
+            <div class="exp-note">Invoice and payment processing · Supplier management · Bank reconciliation · Financial records maintenance</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag navy">Sri Lanka · Remote</span>
+        <span class="tag key">Senior AR/AP</span>
+        <span class="tag key">Month-End Close</span>
+        <span class="tag">Cash Flow Tracking</span>
+        <span class="tag">Vendor Reconciliation</span>
+        <span class="tag">QuickBooks / SAP</span>
+        <span class="tag">Supplier Management</span>
+        <span class="tag">Financial Records</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          Samuditha is the most senior AR/AP profile in this batch. 5+ years, formal accounting background,
+          and hands-on experience with month-end close — that's the level of depth FD Capital needs
+          for a role where the financial data directly supports advisory work.
+          At $1,600/month, exceptional value for this experience level. Intro video coming.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-samuditha.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── 6: Julie ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">JM</div>
+          <div>
+            <div class="card-name">Julie</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Philippines · Remote · Fluent English · Native Filipino
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,800</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        Julie brings hands-on accounts payable and receivable experience in US-facing remote operations.
+        Philippines-based talent with strong English communication and a practical, organized approach
+        to financial workflows. <strong>Proven in managing vendor relationships, tracking payments,
+        and keeping AR/AP cycles running cleanly without supervision.</strong>
+        A reliable, detail-driven professional ready to plug in from day one.
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">AR/AP Specialist</div>
+            <div class="exp-company">Remote Operations · US-Based Client</div>
+            <div class="exp-date">2021 – Present</div>
+            <div class="exp-note">Invoice processing · Vendor payments · AR collections · Monthly reconciliation support</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Finance & Admin Associate</div>
+            <div class="exp-company">Local Business · Philippines</div>
+            <div class="exp-date">2018 – 2021</div>
+            <div class="exp-note">Bookkeeping · Bank reconciliation · Supplier coordination · Financial reporting</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag navy">Philippines · Remote</span>
+        <span class="tag navy">Fluent English</span>
+        <span class="tag key">AR/AP Cycle</span>
+        <span class="tag key">Invoice & Vendor Management</span>
+        <span class="tag">QuickBooks</span>
+        <span class="tag">AR Collections</span>
+        <span class="tag">Bookkeeping</span>
+        <span class="tag">Bank Reconciliation</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          Julie is a solid, dependable AR/AP profile with real US remote experience.
+          Philippines gives her strong English and time zone overlap options with US clients.
+          She manages the operational side without needing to be managed.
+          At $1,800/month, strong fit for what FD Capital needs. Intro video on the way.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-julie.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── 7: P. Angeles ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">PA</div>
+          <div>
+            <div class="card-name">P. Angeles</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Philippines · Remote · Fluent English · Native Filipino
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,800</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        P. Angeles brings a structured AR/AP background with experience managing payables,
+        receivables, and reconciliation in professional finance environments.
+        <strong>Organized, accurate, and comfortable working directly with clients and vendors
+        on financial matters.</strong> Philippines-based with strong English communication
+        and a reliable remote work track record.
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">Accounts Payable / Receivable Specialist</div>
+            <div class="exp-company">Finance Operations · Remote</div>
+            <div class="exp-date">2020 – Present</div>
+            <div class="exp-note">AP/AR management · Vendor invoice processing · Payment scheduling · Reconciliation reports</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Finance & Accounting Support</div>
+            <div class="exp-company">Corporate Finance · Philippines</div>
+            <div class="exp-date">2017 – 2020</div>
+            <div class="exp-note">Accounts processing · Data entry · Financial documentation · Supplier coordination</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag navy">Philippines · Remote</span>
+        <span class="tag key">AP/AR Management</span>
+        <span class="tag key">Payment Scheduling</span>
+        <span class="tag">Vendor Invoice Processing</span>
+        <span class="tag">Reconciliation Reports</span>
+        <span class="tag">QuickBooks</span>
+        <span class="tag">Financial Documentation</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          P. Angeles covers both sides of the ledger with a clean, organized process mindset.
+          AP scheduling and AR reconciliation together — that's the combination FD Capital needs
+          for a role managing multiple client accounts. Intro video is being collected now.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-angeles.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── 8: Princess May ─── -->
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-avatar">PE</div>
+          <div>
+            <div class="card-name">Princess May</div>
+            <div class="card-location">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Philippines · Remote · Fluent English · Native Filipino
+            </div>
+          </div>
+        </div>
+        <div class="card-rate">
+          <div class="card-rate-amount">$1,800</div>
+          <div class="card-rate-period">USD / Month</div>
+        </div>
+      </div>
+
+      <p class="card-summary">
+        Princess May brings practical AR/AP expertise with a proactive attitude toward
+        financial operations. Her background includes invoice and payment management,
+        vendor coordination, and accounting support in structured environments.
+        <strong>Strong written English, organized under pressure, and experienced in
+        keeping financial records accurate and up to date</strong> in fast-paced
+        remote work settings.
+      </p>
+
+      <div class="card-section-title">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+          <div>
+            <div class="exp-role">AR/AP Coordinator</div>
+            <div class="exp-company">Finance & Admin · Remote</div>
+            <div class="exp-date">2020 – Present</div>
+            <div class="exp-note">Invoice management · Payment processing · AR follow-ups · Account reconciliation</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot-col"><div class="exp-dot"></div></div>
+          <div>
+            <div class="exp-role">Accounting Clerk</div>
+            <div class="exp-company">Finance Department · Philippines</div>
+            <div class="exp-date">2017 – 2020</div>
+            <div class="exp-note">Bookkeeping · Journal entries · Vendor communications · Financial record-keeping</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section-title">Core Competencies</div>
+      <div class="tags">
+        <span class="tag navy">Philippines · Remote</span>
+        <span class="tag navy">Fluent English</span>
+        <span class="tag key">AR/AP Coordination</span>
+        <span class="tag key">Invoice & Payment Processing</span>
+        <span class="tag">AR Follow-ups</span>
+        <span class="tag">Account Reconciliation</span>
+        <span class="tag">QuickBooks</span>
+        <span class="tag">Bookkeeping</span>
+      </div>
+
+      <div class="recruiter-note">
+        <div class="recruiter-note-label">Jesus's Note · FD Capital Fit</div>
+        <p>
+          Princess May handles both the processing side and the follow-up side — invoice management
+          plus AR collections follow-through. That's the combination that keeps cash flow clean in
+          an advisory firm. Proactive, reliable, Philippines-based.
+          At $1,800/month, good value. Intro video incoming.
+        </p>
+      </div>
+
+      <div class="doc-links">
+        <span class="doc-links-label">Documents</span>
+        <a class="doc-link video pending" href="#" tabindex="-1">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Intro Video Pending
+        </a>
+        <a class="doc-link primary" href="resume-princess-may.html" target="_blank">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ COMPARISON TABLE ══════════════════ -->
+<div class="comparison-section">
+  <p class="section-eyebrow">At a Glance</p>
+  <h2 class="section-heading">Side-by-Side Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Candidate</th>
+          <th>Location</th>
+          <th>Salary / Mo</th>
+          <th>English Level</th>
+          <th>AR/AP Experience</th>
+          <th>Accounting Tools</th>
+          <th>Finance Background</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Earl Kim</td>
+          <td>Philippines</td>
+          <td><span class="badge-navy">$1,800</span></td>
+          <td><span class="check">Fluent</span></td>
+          <td><span class="check">Full-Cycle</span></td>
+          <td><span class="check">QuickBooks</span></td>
+          <td><span class="check">US-Facing</span></td>
+        </tr>
+        <tr>
+          <td>Pauline</td>
+          <td>TBC</td>
+          <td><span class="badge-navy">$1,800</span></td>
+          <td><span class="check">Professional</span></td>
+          <td><span class="check">AR Collections</span></td>
+          <td><span class="check">QuickBooks / Xero</span></td>
+          <td><span class="partial">Finance-Adjacent</span></td>
+        </tr>
+        <tr>
+          <td>M. Okhonjo</td>
+          <td>Nigeria</td>
+          <td><span class="badge-gold">$1,600</span></td>
+          <td><span class="check">Professional</span></td>
+          <td><span class="check">Full AP/AR</span></td>
+          <td><span class="check">Multi-Currency</span></td>
+          <td><span class="check">Finance Degree</span></td>
+        </tr>
+        <tr>
+          <td>Wanjiru Barbra</td>
+          <td>Kenya</td>
+          <td><span class="badge-gold">$1,600</span></td>
+          <td><span class="check">Fluent</span></td>
+          <td><span class="check">AR/AP Mgmt</span></td>
+          <td><span class="check">QuickBooks</span></td>
+          <td><span class="partial">Accounting Background</span></td>
+        </tr>
+        <tr>
+          <td>Samuditha</td>
+          <td>Sri Lanka</td>
+          <td><span class="badge-gold">$1,600</span></td>
+          <td><span class="check">Professional</span></td>
+          <td><span class="check">Senior · 5+ yrs</span></td>
+          <td><span class="check">QuickBooks / SAP</span></td>
+          <td><span class="check">Month-End Close</span></td>
+        </tr>
+        <tr>
+          <td>Julie</td>
+          <td>Philippines</td>
+          <td><span class="badge-navy">$1,800</span></td>
+          <td><span class="check">Fluent</span></td>
+          <td><span class="check">Full-Cycle</span></td>
+          <td><span class="check">QuickBooks</span></td>
+          <td><span class="check">US-Facing</span></td>
+        </tr>
+        <tr>
+          <td>P. Angeles</td>
+          <td>Philippines</td>
+          <td><span class="badge-navy">$1,800</span></td>
+          <td><span class="check">Fluent</span></td>
+          <td><span class="check">AP/AR Both Sides</span></td>
+          <td><span class="check">QuickBooks</span></td>
+          <td><span class="partial">Finance-Adjacent</span></td>
+        </tr>
+        <tr>
+          <td>Princess May</td>
+          <td>Philippines</td>
+          <td><span class="badge-navy">$1,800</span></td>
+          <td><span class="check">Fluent</span></td>
+          <td><span class="check">AR/AP + Follow-ups</span></td>
+          <td><span class="check">QuickBooks</span></td>
+          <td><span class="partial">Accounting Background</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════ TEAM ══════════════════ -->
+<section class="team-section">
+  <div class="team-inner">
+    <p class="section-eyebrow">Leading This Search</p>
+    <h2 class="team-heading">Who's Running This</h2>
+    <p class="team-subtitle">This search is led directly by the Head of White Glove at Sagan. Every profile here has been personally reviewed and selected to match FD Capital's caliber of work.</p>
+
+    <div class="team-card">
+      <div class="team-card-top">
+        <img class="team-photo" src="https://wg-dotcom.github.io/white-glove/images/jesus.jpeg" alt="Jesus Pacheco">
+      </div>
+      <div class="team-card-body">
+        <div class="team-name">Jesus Pacheco</div>
+        <div class="team-role">Head of White Glove · Sagan</div>
+        <div class="team-location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mendoza, Argentina
+        </div>
+        <p class="team-bio">Head of White Glove at Sagan. Leads the premium placement practice for clients who need the right person, not just a resume. MIT Supply Chain background, 16 years in sales and operations across three continents. He runs this search from sourcing to shortlist — and stays in the room until the hire is made.</p>
+        <a href="mailto:jesus.p@getsagan.com" class="team-email">jesus.p@getsagan.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="footer-line recruiter-sig">Curated by <strong>Jesus Pacheco</strong> · Head of White Glove, Sagan</div>
+  <div class="footer-line">Questions? Reach Jesus at <a href="mailto:jesus.p@getsagan.com">jesus.p@getsagan.com</a></div>
+  <div class="footer-line" style="margin-top:10px;">© 2026 Sagan White Glove · <a href="https://getsagan.com" target="_blank" rel="noopener">getsagan.com</a> · Confidential — for FD Capital Group only</div>
+</footer>
+
+</body>
+</html>
